@@ -17,7 +17,6 @@ typedef struct {
 	
 }dados_jogadores;
 
-
 void definicao_posicoes(int posicoes[3][3]);
 void cadastro_jogadores(dados_jogadores *jogadores);
 void preencher_tabuleiro_vizualizacao(int posicoes[3][3], char vizualizacao[3][3]);
@@ -138,8 +137,7 @@ void cadastro_jogadores(dados_jogadores *jogadores)
 	{
 		
 		printf ("Digite o nome do %d° jogador: ",i+1);
-		fgets ((jogadores + i)->nome,20,stdin);
-		
+		fgets ((jogadores + i)->nome,20,stdin);	
 	}
 }
 
@@ -171,11 +169,9 @@ void preencher_tabuleiro_vizualizacao(int posicoes[3][3], char vizualizacao[3][3
 			{
 
 				vizualizacao[i][j] = 'o';
-
 			}	
 		}
 	}
-
 }
 
 // Exibe o tabuleiro para o usuário
@@ -300,13 +296,11 @@ int jogada(int posicoes[3][3], int* posicao_jogada,dados_jogadores *dados,int jo
 	if (posicao_valida(posicoes,posicao_jogada) == 1)
 	{
 		posicoes[i][j] = (dados + jogador)->simbolo;
-		opcao_valida = 1;
-		
+		opcao_valida = 1;	
 	}
 	else
 	{
 		opcao_valida = 0;
-
 	}
 	
 	pause ();
@@ -328,11 +322,9 @@ int posicao_valida(int posicoes[3][3], int* posi)
 	else
 	{
 		valida = 0;
-
 	}
 	
-	return valida;
-	
+	return valida;	
 }
 
 // Verifica se existe algum ganhador
@@ -346,8 +338,9 @@ int verificacao_gahador(int posicoes[3][3])
 	{
 		if (((posicoes[i][0] == posicoes[i][1]) && (posicoes[i][1] == posicoes[i][2])) && (posicoes[i][0] != 0))
 		{
-			
+
 			ganhou = 1;	
+
 		}
 	}
 	
@@ -356,7 +349,8 @@ int verificacao_gahador(int posicoes[3][3])
 		if ((posicoes[0][i] == posicoes[1][i]) && (posicoes[1][i] == posicoes[2][i]) && (posicoes[0][i] != 0))
 		{
 			
-			ganhou = 1;	
+			ganhou = 1;
+
 		}
 	}
 	
@@ -364,12 +358,14 @@ int verificacao_gahador(int posicoes[3][3])
 	{
 			
 		ganhou = 1;	
+
 	}
 	
 	if ((posicoes[0][2] == posicoes[1][1]) && (posicoes[1][1] == posicoes[2][0]) && (posicoes[0][2] != 0))
 	{
 			
-		ganhou = 1;		
+		ganhou = 1;	
+
 	}
 
 	return ganhou;
@@ -381,18 +377,14 @@ void limpar_buffer()
 {
 	
 	char c;
-	
 	while ((c = getchar()) != '\n');
-	
 }
 
 // Simula uma limpase de tela
 void limpa_tela()
 {
 
-	printf ("\n\n\n\n");
-	
-	
+	printf ("\n\n\n\n");	
 }
 
 // Pausa o sistema até o usuário digitar uma tecla
