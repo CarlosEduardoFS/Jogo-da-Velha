@@ -9,8 +9,7 @@
 * Jogo da Velha em C
 *
 */
-
-// Declara��o de um registro 
+ 
 typedef struct {
 	
 	char nome[20];
