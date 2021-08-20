@@ -7,6 +7,7 @@
 *
 * @author: Carlos Eduardo
 * Jogo da Velha em C
+* versão 1.2
 *
 */
  
